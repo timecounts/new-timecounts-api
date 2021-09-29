@@ -27,7 +27,7 @@ router.get(
 require('../../helpers/auth/facebookAuth')(passport, 5000)
 
 // * Facebook Auth routes
-router.get('/facebook', passport.authenticate('facebook', { scope: ['profile', 'email'] }))
+router.get('/facebook', passport.authenticate('facebook', { scope: 'email' }))
 
 router.get(
     '/facebook/callback', 
