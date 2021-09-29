@@ -1,0 +1,258 @@
+
+
+ReferenceError: userComp is not defined
+    at exports.createUser (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:23:9)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+ReferenceError: email is not defined
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:65:50)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+ReferenceError: email is not defined
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:65:50)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+SyntaxError: Unexpected token / in JSON at position 57
+    at JSON.parse (<anonymous>)
+    at parse (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/body-parser/lib/types/json.js:89:19)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/body-parser/lib/read.js:121:18
+    at invokeCallback (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/raw-body/index.js:224:16)
+    at done (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/raw-body/index.js:213:7)
+    at IncomingMessage.onEnd (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/raw-body/index.js:273:7)
+    at IncomingMessage.emit (node:events:402:35)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+Error: error:0909006C:PEM routines:get_name:no start line
+    at Sign.sign (node:internal/crypto/sig:131:29)
+    at Object.sign (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jwa/index.js:152:45)
+    at Object.jwsSign [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jws/lib/sign-stream.js:32:24)
+    at Object.module.exports [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:204:16)
+    at exports.generateToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:15:16)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:70:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+Error: error:0909006C:PEM routines:get_name:no start line
+    at Sign.sign (node:internal/crypto/sig:131:29)
+    at Object.sign (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jwa/index.js:152:45)
+    at Object.jwsSign [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jws/lib/sign-stream.js:32:24)
+    at Object.module.exports [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:204:16)
+    at exports.generateToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:15:16)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:71:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+Error: error:0909006C:PEM routines:get_name:no start line
+    at Sign.sign (node:internal/crypto/sig:131:29)
+    at Object.sign (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jwa/index.js:152:45)
+    at Object.jwsSign [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jws/lib/sign-stream.js:32:24)
+    at Object.module.exports [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:204:16)
+    at exports.generateToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:15:16)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:71:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+Error: error:0909006C:PEM routines:get_name:no start line
+    at Sign.sign (node:internal/crypto/sig:131:29)
+    at Object.sign (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jwa/index.js:152:45)
+    at Object.jwsSign [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jws/lib/sign-stream.js:32:24)
+    at Object.module.exports [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:204:16)
+    at exports.generateToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:15:16)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:71:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+Error: error:0909006C:PEM routines:get_name:no start line
+    at Sign.sign (node:internal/crypto/sig:131:29)
+    at Object.sign (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jwa/index.js:152:45)
+    at Object.jwsSign [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jws/lib/sign-stream.js:32:24)
+    at Object.module.exports [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:204:16)
+    at exports.generateToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:15:16)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:70:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+Error: error:0909006C:PEM routines:get_name:no start line
+    at Sign.sign (node:internal/crypto/sig:131:29)
+    at Object.sign (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jwa/index.js:152:45)
+    at Object.jwsSign [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jws/lib/sign-stream.js:32:24)
+    at Object.module.exports [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:204:16)
+    at exports.generateToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:15:16)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:70:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+Error: "algorithms" is not allowed in "options"
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:47:17
+    at Array.forEach (<anonymous>)
+    at validate (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:43:6)
+    at validateOptions (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:58:10)
+    at Object.module.exports [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:141:5)
+    at exports.generateToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:16:16)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:70:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+Error: "algorithm" must be a valid string enum value
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:52:15
+    at Array.forEach (<anonymous>)
+    at validate (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:43:6)
+    at validateOptions (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:58:10)
+    at Object.module.exports [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:141:5)
+    at exports.generateToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:16:16)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:70:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+Error: "algorithm" must be a valid string enum value
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:52:15
+    at Array.forEach (<anonymous>)
+    at validate (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:43:6)
+    at validateOptions (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:58:10)
+    at Object.module.exports [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:141:5)
+    at exports.generateToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:16:16)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:70:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+Error: "audience" must be a string or array
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:52:15
+    at Array.forEach (<anonymous>)
+    at validate (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:43:6)
+    at validateOptions (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:58:10)
+    at Object.module.exports [as sign] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/jsonwebtoken/sign.js:141:5)
+    at Object.exports.signRefreshToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:47:16)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/user/user.controller.js:70:43)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+TypeError: Class constructor MyError cannot be invoked without 'new'
+    at Object.exports.signRefreshToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:60:9)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/auth/auth.controller.js:19:49)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+ReferenceError: newRefreshToken is not defined
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/auth/auth.controller.js:21:44)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+TypeError: redis.set(...).then is not a function
+    at Object.exports.signRefreshToken (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/helpers/jsonwebtoken.js:55:12)
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/auth/auth.controller.js:19:49)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+ReferenceError: newRefreshToken is not defined
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/auth/auth.controller.js:21:44)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+ReferenceError: newRefreshToken is not defined
+    at exports.login (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/versions/v1/api/auth/auth.controller.js:21:44)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at parse (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/body-parser/lib/types/json.js:89:19)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/body-parser/lib/read.js:121:18
+    at invokeCallback (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/raw-body/index.js:224:16)
+    at done (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/raw-body/index.js:213:7)
+    at IncomingMessage.onEnd (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/raw-body/index.js:273:7)
+    at IncomingMessage.emit (node:events:402:35)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+Error: Unknown authentication strategy "facebook"
+    at attempt (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport/lib/middleware/authenticate.js:184:39)
+    at authenticate (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport/lib/middleware/authenticate.js:361:7)
+    at Layer.handle [as handle_request] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/layer.js:95:5)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/index.js:174:3)
+
+Error: Unknown authentication strategy "facebook"
+    at attempt (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport/lib/middleware/authenticate.js:184:39)
+    at authenticate (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport/lib/middleware/authenticate.js:361:7)
+    at Layer.handle [as handle_request] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/layer.js:95:5)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/index.js:174:3)
+
+FacebookAuthorizationError: App not set up: This app is still in development mode, and you don't have access to it. Switch to a registered test user or ask an app admin for permissions.
+    at Strategy.authenticate (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-facebook/lib/strategy.js:81:23)
+    at attempt (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport/lib/middleware/authenticate.js:360:16)
+    at authenticate (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport/lib/middleware/authenticate.js:361:7)
+    at Layer.handle [as handle_request] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/layer.js:95:5)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/express/lib/router/index.js:275:10)
+
+FacebookTokenError: This authorization code has been used.
+    at Strategy.parseErrorResponse (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-facebook/lib/strategy.js:198:12)
+    at Strategy.OAuth2Strategy._createOAuthError (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-oauth2/lib/strategy.js:420:16)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-oauth2/lib/strategy.js:177:45
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:191:18
+    at passBackControl (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:132:9)
+    at IncomingMessage.<anonymous> (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:157:7)
+    at IncomingMessage.emit (node:events:402:35)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+FacebookGraphAPIError: (#100) Tried accessing nonexisting field (public_profile) on node type (User)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-facebook/lib/strategy.js:167:21
+    at passBackControl (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:132:9)
+    at IncomingMessage.<anonymous> (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:157:7)
+    at IncomingMessage.emit (node:events:402:35)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+FacebookGraphAPIError: (#100) Tried accessing nonexisting field (user) on node type (User)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-facebook/lib/strategy.js:167:21
+    at passBackControl (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:132:9)
+    at IncomingMessage.<anonymous> (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:157:7)
+    at IncomingMessage.emit (node:events:402:35)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+FacebookTokenError: This authorization code has expired.
+    at Strategy.parseErrorResponse (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-facebook/lib/strategy.js:198:12)
+    at Strategy.OAuth2Strategy._createOAuthError (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-oauth2/lib/strategy.js:420:16)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-oauth2/lib/strategy.js:177:45
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:191:18
+    at passBackControl (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:132:9)
+    at IncomingMessage.<anonymous> (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:157:7)
+    at IncomingMessage.emit (node:events:402:35)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+FacebookTokenError: This authorization code has been used.
+    at Strategy.parseErrorResponse (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-facebook/lib/strategy.js:198:12)
+    at Strategy.OAuth2Strategy._createOAuthError (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-oauth2/lib/strategy.js:420:16)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-oauth2/lib/strategy.js:177:45
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:191:18
+    at passBackControl (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:132:9)
+    at IncomingMessage.<anonymous> (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:157:7)
+    at IncomingMessage.emit (node:events:402:35)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+FacebookTokenError: This authorization code has been used.
+    at Strategy.parseErrorResponse (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-facebook/lib/strategy.js:198:12)
+    at Strategy.OAuth2Strategy._createOAuthError (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-oauth2/lib/strategy.js:420:16)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-oauth2/lib/strategy.js:177:45
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:191:18
+    at passBackControl (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:132:9)
+    at IncomingMessage.<anonymous> (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:157:7)
+    at IncomingMessage.emit (node:events:402:35)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+FacebookTokenError: This authorization code has been used.
+    at Strategy.parseErrorResponse (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-facebook/lib/strategy.js:198:12)
+    at Strategy.OAuth2Strategy._createOAuthError (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-oauth2/lib/strategy.js:420:16)
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/passport-oauth2/lib/strategy.js:177:45
+    at /run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:191:18
+    at passBackControl (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:132:9)
+    at IncomingMessage.<anonymous> (/run/media/bishal9/Repos/Varlyq Technologies/Timecounts/server/node_modules/oauth/lib/oauth2.js:157:7)
+    at IncomingMessage.emit (node:events:402:35)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
