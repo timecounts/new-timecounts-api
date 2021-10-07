@@ -11,7 +11,7 @@ client.on('connect', () => {
 })
 
 client.on('error', error => {
-    console.log('Redis error: ', error.message)
+    console.log(`Redis error: ${error.message}`)
 })
 
 client.on('ready', () => {

@@ -7,21 +7,19 @@ module.exports = (passport, PORT, next) => {
         passport.use(new FacebookStrategy({
             clientID: process.env.FACEBOOK_APP_ID,
             clientSecret: process.env.FACEBOOK_APP_SECRET,
-            callbackURL: `http://localhost:${PORT}/api/v1/auth/facebook/callback`,
-            profileFields: ['id', 'name', 'email']
+            callbackURL: `/api/v1/auth/facebook/callback`,
+            profileFields: ['id', 'displayName', 'email']
         },
             async function (accessToken, refreshToken, profile, done) {
-                
                 // * User data to be saved
                 const newUser = {
                     facebookId: profile.id,
-                    firstName: profile.name.givenName,
-                    lastName: profile.name.familyName,
+                    fullName: profile.displayName,
                     email: profile.emails[0].value
                 }
     
                 try {
-                    const user = await User.findOne({ facebookId: profile.id })
+                    let user = await User.findOne({ email: newUser.email })
     
                     if (user) {
                         done(null, user)
@@ -30,7 +28,7 @@ module.exports = (passport, PORT, next) => {
                         done(null, user)
                     }
                 } catch (error) {
-                    next(error)
+                    done(error)
                 }
             }
         ))
@@ -41,7 +39,6 @@ module.exports = (passport, PORT, next) => {
         passport.deserializeUser((id, done) => {
             User.findById(id, (error, user) => {
                 if (error) throw new MyError(404, 'User does not exist.')
-                console.log('User ', user)
                 done(null, user)
             })
         })

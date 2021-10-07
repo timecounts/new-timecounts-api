@@ -7,14 +7,14 @@ const MyError = require("../../error/MyError")
 const redis = require('../../helpers/redis')
 
 exports.login = async (req, res, next) => {
-    try {      
+    try {
         const data = await validate(Validators.loginUserValidation, req.body)
 
         const user = await User.findOne({ email: data.email })
         if (user === null) throw new MyError(404, 'User does not exist.')
 
         const match = bcrypt.compareSync(data.password, user.password)
-        if (!match) throw new MyError(404, 'User credentials do not match.')
+        if (!match) throw new MyError(403, 'User credentials do not match.')
 
         const accessToken = await TokenHandler.generateToken({ id: user._id })
         const refreshToken = await TokenHandler.signRefreshToken(user._id.toString())
@@ -35,7 +35,7 @@ exports.failedLogin = (req, res, next) => {
     try {
         res.json({
             success: false,
-            message: 'Login failure.'
+            message: 'Login failed.'
         })
     } catch (error) {
         next(error)
@@ -75,6 +75,27 @@ exports.jwtLogout = async (req, res, next) => {
     }
 }
 
+exports.thirdPartyAuthCallback = async (req, res, next) => {
+    try {
+        const user = await User.findOne({ email: req.user.email })
+        if (user === null) throw new MyError(404, 'User does not exist.')
+
+        const accessToken = await TokenHandler.generateToken({ id: user._id })
+        const refreshToken = await TokenHandler.signRefreshToken(user._id.toString())
+
+        if (!refreshToken) throw new MyError(500, 'Internal Server Error')
+
+        delete(req.user)
+        res.json({
+            success: true,
+            accessToken: accessToken,
+            refreshToken: refreshToken
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
 exports.refreshToken = async (req, res, next) => {
     try {
         const { refreshToken } = req.body
@@ -100,7 +121,7 @@ exports.refreshToken = async (req, res, next) => {
     }
 }
 
-exports.forgotPassword = async (req, res, next) => {    
+exports.forgotPassword = async (req, res, next) => {
     try {
         const data = await validate(Validators.forgotPasswordValidation, req.body)
 

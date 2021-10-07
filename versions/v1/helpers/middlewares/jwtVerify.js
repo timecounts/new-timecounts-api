@@ -4,7 +4,6 @@ const { validateToken, validateForgotPasswordToken } = require('../jsonwebtoken'
 
 const jwtVerify = async (req, res, next) => {
     try {
-
         let token
 
         try {

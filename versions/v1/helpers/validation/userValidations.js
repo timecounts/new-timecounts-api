@@ -1,8 +1,7 @@
 const yup = require('yup')
 
 const createUserValidation = yup.object({
-    firstName: yup.string().required(),
-    lastName: yup.string().required(),
+    fullName: yup.string().required(),
     email: yup.string().required().email(),
     password: yup.string().required(),
 })

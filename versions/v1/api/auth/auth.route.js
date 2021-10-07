@@ -5,44 +5,28 @@ const { forgotPasswordJwtVerify } = require('../../helpers/middlewares/jwtVerify
 const authController = require('./auth.controller')
 
 // * Google Authentication Strategy
-require('../../helpers/auth/googleAuth')
+require('../../helpers/auth/googleAuth')(passport)
 
 // * Google Auth Routes
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
 
 router.get(
     '/google/callback',
-    passport.authenticate('google', { failureRedirect: '/failed' }), 
-    (req, res) => {
-
-        // * Successful authenticated
-        res.json({
-            success: true,
-            message: 'Successfully logged into your Google Account.'
-        })
-    }
+    passport.authenticate('google', { failureRedirect: '/failed' }),
+    authController.thirdPartyAuthCallback
 )
 
 // * Facebook Authentication Strategy
-require('../../helpers/auth/facebookAuth')(passport, 5000)
+require('../../helpers/auth/facebookAuth')(passport)
 
 // * Facebook Auth routes
 router.get('/facebook', passport.authenticate('facebook', { scope: 'email' }))
 
 router.get(
-    '/facebook/callback', 
+    '/facebook/callback',
     passport.authenticate('facebook', { failureRedirect: '/failed' }),
-    (req, res) => {
-        // * Successful authenticated
-        res.json({
-            success: true,
-            message: 'Successfully logged into your Facebook Account.'
-        })
-    }
+    authController.thirdPartyAuthCallback
 )
-
-
-
 
 router.post('/login', authController.login)
 router.get('/failed', authController.failedLogin)

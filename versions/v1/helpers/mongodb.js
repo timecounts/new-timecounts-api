@@ -2,18 +2,24 @@ const mongoose = require('mongoose')
 
 // * Initialize Database
 mongoose
-    .connect(process.env.MONGODB_URI)
+    .connect(process.env.MONGODB_URI, {
+        ssl: true,
+        sslValidate: true,
+        noDelay: true
+    })
     .then(() => {
         console.log('Mongodb connected!')
     })
-    .catch(err => console.log(err.message))
+    .catch(error => {
+        console.log(`Mongoose Connection Error: ${error.message}`)
+    })
 
 mongoose.connection.on('connected', () => {
     console.log('Mongoose connected to database.')
 })
 
-mongoose.connection.on('error', err => {
-    console.log(err.message)
+mongoose.connection.on('error', error => {
+    console.log(`MongoDB Error: ${error.message}`)
 })
 
 mongoose.connection.on('disconnected', () => {
@@ -22,9 +28,7 @@ mongoose.connection.on('disconnected', () => {
 
 process.on('SIGINT', () => {
     mongoose.connection.close(() => {
-        console.log(
-            'Mongoose connection is disconnected due to app termination.'
-        )
+        console.log('Mongoose connection is disconnected due to app termination.')
         process.exit(0)
     })
 })
