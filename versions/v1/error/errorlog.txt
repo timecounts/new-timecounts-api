@@ -55,3 +55,15 @@ MongoServerError: E11000 duplicate key error collection: database_1.users index:
     at writeOrBuffer (node:internal/streams/writable:389:12)
     at _write (node:internal/streams/writable:330:10)
     at MessageStream.Writable.write (node:internal/streams/writable:334:10)
+
+MongoServerError: E11000 duplicate key error collection: database_1.users index: facebookId_1 dup key: { facebookId: null }
+    at C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\mongodb\lib\operations\insert.js:51:33
+    at C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\mongodb\lib\cmap\connection_pool.js:272:25
+    at handleOperationResult (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\mongodb\lib\sdam\server.js:363:9)
+    at MessageStream.messageHandler (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\mongodb\lib\cmap\connection.js:479:9)
+    at MessageStream.emit (events.js:400:28)
+    at processIncomingData (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\mongodb\lib\cmap\message_stream.js:108:16)
+    at MessageStream._write (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\mongodb\lib\cmap\message_stream.js:28:9)
+    at writeOrBuffer (internal/streams/writable.js:358:12)
+    at MessageStream.Writable.write (internal/streams/writable.js:303:10)
+    at TLSSocket.ondata (internal/streams/readable.js:726:22)

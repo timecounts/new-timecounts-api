@@ -13,7 +13,6 @@ module.exports = (passport, PORT, next) => {
             async function (accessToken, refreshToken, profile, done) {
                 // * User data to be saved
                 const newUser = {
-                    facebookId: profile.id,
                     fullName: profile.displayName,
                     email: profile.emails[0].value
                 }
