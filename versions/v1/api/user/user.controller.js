@@ -2,6 +2,8 @@ const User = require("./user.model")
 const validate = require("../../helpers/validation/validate")
 const Validators = require('../../helpers/validation/userValidations')
 const bcrypt = require("bcrypt")
+const transporter = require('../../helpers/email')
+const nodemailer = require('nodemailer')
 const MyError = require("../../error/MyError")
 
 exports.createUser = async (req, res, next) => {
@@ -20,9 +22,18 @@ exports.createUser = async (req, res, next) => {
 
         await User.create(data)
 
+        let info = await transporter.sendMail({
+            from: '"Fred Foo 👻" <deepanshu@capitalnumbers.com>', // sender address
+            to: "deepanshu@capitalnumbers.com", // list of receivers
+            subject: "Hello ✔", // Subject line
+            text: "Hello world?", // plain text body
+            html: "<b>Hello world?</b>", // html body
+        })
+
         res.json({
             success: true,
             data: "User created successfully.",
+            mail: info
         })
     } catch (error) {
         next(error)

@@ -67,3 +67,63 @@ MongoServerError: E11000 duplicate key error collection: database_1.users index:
     at writeOrBuffer (internal/streams/writable.js:358:12)
     at MessageStream.Writable.write (internal/streams/writable.js:303:10)
     at TLSSocket.ondata (internal/streams/readable.js:726:22)
+
+TypeError: Cannot read property 'destroy' of undefined
+    at exports.logout (C:\Users\Bishal 9\Documents\Timecounts\server\versions\v1\api\auth\auth.controller.js:47:21)
+    at Layer.handle [as handle_request] (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:174:3)
+    at router (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:47:12)
+
+TypeError: Cannot read property 'destroy' of undefined
+    at exports.logout (C:\Users\Bishal 9\Documents\Timecounts\server\versions\v1\api\auth\auth.controller.js:47:21)
+    at Layer.handle [as handle_request] (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:174:3)
+    at router (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:47:12)
+
+TypeError: Cannot read property 'email' of undefined
+    at exports.facebookLogin (C:\Users\Bishal 9\Documents\Timecounts\server\versions\v1\api\auth\auth.controller.js:87:68)
+    at Layer.handle [as handle_request] (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:174:3)
+    at router (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:47:12)
+
+TypeError: Cannot read property 'email' of undefined
+    at exports.googleLogin (C:\Users\Bishal 9\Documents\Timecounts\server\versions\v1\api\auth\auth.controller.js:107:68)
+    at Layer.handle [as handle_request] (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:174:3)
+    at router (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:47:12)
+
+TypeError: Cannot read property 'name' of undefined
+    at exports.facebookSignup (C:\Users\Bishal 9\Documents\Timecounts\server\versions\v1\api\auth\auth.controller.js:130:41)
+    at Layer.handle [as handle_request] (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:174:3)
+    at router (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:47:12)

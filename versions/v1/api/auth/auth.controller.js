@@ -42,22 +42,7 @@ exports.failedLogin = (req, res, next) => {
     }
 }
 
-exports.logout = (req, res, next) => {
-    try {
-        req.session.destroy(error => {
-            if (error) console.log('Error', error)
-        })
-        req.logOut()
-        res.json({
-            success: true,
-            message: 'User successfully logged out.'
-        })
-    } catch (error) {
-        next(error)
-    }
-}
-
-exports.jwtLogout = async (req, res, next) => {
+exports.logout = async (req, res, next) => {
     try {
         const { refreshToken } = req.body
         if (!refreshToken) throw new MyError(400, 'Bad Request')
@@ -75,9 +60,10 @@ exports.jwtLogout = async (req, res, next) => {
     }
 }
 
-exports.thirdPartyAuthCallback = async (req, res, next) => {
+exports.facebookLogin = async (req, res, next) => {
     try {
-        const user = await User.findOne({ email: req.user.email })
+        console.log(req.body)
+        const user = await User.findOne({ email: req.body._profile.email })
         if (user === null) throw new MyError(404, 'User does not exist.')
 
         const accessToken = await TokenHandler.generateToken({ id: user._id })
@@ -85,12 +71,109 @@ exports.thirdPartyAuthCallback = async (req, res, next) => {
 
         if (!refreshToken) throw new MyError(500, 'Internal Server Error')
 
-        delete(req.user)
         res.json({
             success: true,
             accessToken: accessToken,
             refreshToken: refreshToken
         })
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.googleLogin = async (req, res, next) => {
+    try {
+        const user = await User.findOne({ email: req.body._profile.email })
+        if (user === null) throw new MyError(404, 'User does not exist.')
+
+        const accessToken = await TokenHandler.generateToken({ id: user._id })
+        const refreshToken = await TokenHandler.signRefreshToken(user._id.toString())
+
+        if (!refreshToken) throw new MyError(500, 'Internal Server Error')
+
+        res.json({
+            success: true,
+            accessToken: accessToken,
+            refreshToken: refreshToken
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.facebookSignup = async (req, res, next) => {
+    try {
+
+        console.log(req.body)
+        const newUser = {
+            fullName: req.body._profile.name,
+            email: req.body._profile.email
+        }
+
+        let user = await User.findOne({ email: newUser.email })
+        if (user) {
+            const accessToken = await TokenHandler.generateToken({ id: user._id })
+            const refreshToken = await TokenHandler.signRefreshToken(user._id.toString())
+
+            if (!refreshToken) throw new MyError(500, 'Internal Server Error')
+
+            res.json({
+                success: true,
+                accessToken: accessToken,
+                refreshToken: refreshToken
+            })
+        } else {
+            user = await User.create(newUser)
+
+            const accessToken = await TokenHandler.generateToken({ id: user._id })
+            const refreshToken = await TokenHandler.signRefreshToken(user._id.toString())
+
+            if (!refreshToken) throw new MyError(500, 'Internal Server Error')
+
+            res.json({
+                success: true,
+                accessToken: accessToken,
+                refreshToken: refreshToken
+            })
+        }
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.googleSignup = async (req, res, next) => {
+    try {
+        const newUser = {
+            fullName: req.body._profile.name,
+            email: req.body._profile.email
+        }
+
+        let user = await User.findOne({ email: newUser.email })
+        if (user) {
+            const accessToken = await TokenHandler.generateToken({ id: user._id })
+            const refreshToken = await TokenHandler.signRefreshToken(user._id.toString())
+
+            if (!refreshToken) throw new MyError(500, 'Internal Server Error')
+
+            res.json({
+                success: true,
+                accessToken: accessToken,
+                refreshToken: refreshToken
+            })
+        } else {
+            user = await User.create(newUser)
+
+            const accessToken = await TokenHandler.generateToken({ id: user._id })
+            const refreshToken = await TokenHandler.signRefreshToken(user._id.toString())
+
+            if (!refreshToken) throw new MyError(500, 'Internal Server Error')
+
+            res.json({
+                success: true,
+                accessToken: accessToken,
+                refreshToken: refreshToken
+            })
+        }
     } catch (error) {
         next(error)
     }
