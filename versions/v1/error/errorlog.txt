@@ -127,3 +127,67 @@ TypeError: Cannot read property 'name' of undefined
     at next (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:275:10)
     at Function.handle (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:174:3)
     at router (C:\Users\Bishal 9\Documents\Timecounts\server\node_modules\express\lib\router\index.js:47:12)
+
+MongoServerError: E11000 duplicate key error collection: database_1.users index: pictureUrl_1 dup key: { pictureUrl: null }
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/operations/insert.js:51:33
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/connection_pool.js:272:25
+    at handleOperationResult (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/sdam/server.js:363:9)
+    at MessageStream.messageHandler (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/connection.js:479:9)
+    at MessageStream.emit (node:events:390:28)
+    at processIncomingData (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/message_stream.js:108:16)
+    at MessageStream._write (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/message_stream.js:28:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at MessageStream.Writable.write (node:internal/streams/writable:334:10)
+
+MongoServerError: E11000 duplicate key error collection: database_1.users index: pictureUrl_1 dup key: { pictureUrl: null }
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/operations/insert.js:51:33
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/connection_pool.js:272:25
+    at handleOperationResult (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/sdam/server.js:363:9)
+    at MessageStream.messageHandler (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/connection.js:479:9)
+    at MessageStream.emit (node:events:390:28)
+    at processIncomingData (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/message_stream.js:108:16)
+    at MessageStream._write (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/message_stream.js:28:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at MessageStream.Writable.write (node:internal/streams/writable:334:10)
+
+TypeError: Cannot read properties of null (reading 'email')
+    at exports.createUser (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/user/user.controller.js:24:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+MongoServerError: E11000 duplicate key error collection: database_1.users index: pictureUrl_1 dup key: { pictureUrl: null }
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/operations/insert.js:51:33
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/connection_pool.js:272:25
+    at handleOperationResult (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/sdam/server.js:363:9)
+    at MessageStream.messageHandler (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/connection.js:479:9)
+    at MessageStream.emit (node:events:390:28)
+    at processIncomingData (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/message_stream.js:108:16)
+    at MessageStream._write (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/message_stream.js:28:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at MessageStream.Writable.write (node:internal/streams/writable:334:10)
+
+MongoServerError: E11000 duplicate key error collection: database_1.users index: pictureUrl_1 dup key: { pictureUrl: null }
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/operations/insert.js:51:33
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/connection_pool.js:272:25
+    at handleOperationResult (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/sdam/server.js:363:9)
+    at MessageStream.messageHandler (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/connection.js:479:9)
+    at MessageStream.emit (node:events:390:28)
+    at processIncomingData (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/message_stream.js:108:16)
+    at MessageStream._write (/home/deepanshu/Documents/Timecounts/server/node_modules/mongodb/lib/cmap/message_stream.js:28:9)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at MessageStream.Writable.write (node:internal/streams/writable:334:10)
+
+TypeError: Cannot read properties of undefined (reading 'validate')
+    at validate (/home/deepanshu/Documents/Timecounts/server/versions/v1/helpers/validation/validate.js:4:50)
+    at exports.resendEmail (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/auth/auth.controller.js:260:28)
+    at Layer.handle [as handle_request] (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/router/layer.js:95:5)
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/router/index.js:174:3)

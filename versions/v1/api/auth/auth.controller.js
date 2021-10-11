@@ -1,14 +1,15 @@
 const TokenHandler = require('../../helpers/jsonwebtoken')
 const User = require('../user/user.model')
 const validate = require("../../helpers/validation/validate")
-const Validators = require('../../helpers/validation/userValidations')
+const Validators = require('../../helpers/validation')
 const bcrypt = require("bcrypt")
 const MyError = require("../../error/MyError")
 const redis = require('../../helpers/redis')
+const { verifyEmail } = require('../../helpers/email/sendEmail')
 
 exports.login = async (req, res, next) => {
     try {
-        const data = await validate(Validators.loginUserValidation, req.body)
+        const data = await validate(Validators.user.loginUserValidation, req.body)
 
         const user = await User.findOne({ email: data.email })
         if (user === null) throw new MyError(404, 'User does not exist.')
@@ -62,7 +63,6 @@ exports.logout = async (req, res, next) => {
 
 exports.facebookLogin = async (req, res, next) => {
     try {
-        console.log(req.body)
         const user = await User.findOne({ email: req.body._profile.email })
         if (user === null) throw new MyError(404, 'User does not exist.')
 
@@ -103,11 +103,12 @@ exports.googleLogin = async (req, res, next) => {
 
 exports.facebookSignup = async (req, res, next) => {
     try {
-
-        console.log(req.body)
         const newUser = {
+            provider: req.body._provider,
+            providerId: req.body._profile.id,
             fullName: req.body._profile.name,
-            email: req.body._profile.email
+            email: req.body._profile.email,
+            pictureUrl: req.body._profile.profilePicURL
         }
 
         let user = await User.findOne({ email: newUser.email })
@@ -144,8 +145,11 @@ exports.facebookSignup = async (req, res, next) => {
 exports.googleSignup = async (req, res, next) => {
     try {
         const newUser = {
+            provider: req.body._provider,
+            providerId: req.body._profile.id,
             fullName: req.body._profile.name,
-            email: req.body._profile.email
+            email: req.body._profile.email,
+            pictureUrl: req.body._profile.profilePicURL
         }
 
         let user = await User.findOne({ email: newUser.email })
@@ -189,6 +193,10 @@ exports.refreshToken = async (req, res, next) => {
         if (!userId) throw new MyError(500, 'Internal Server Error')
         if (userId === 'unauthorized') throw new MyError(401, 'Unauthorized')
 
+        redis.del(userId, (error, value) => {
+            if (error) throw new MyError(500, 'Internal Server Error')
+        })
+
         const accessToken = await TokenHandler.generateToken({ id: userId })
         const newRefreshToken = await TokenHandler.signRefreshToken(userId)
 
@@ -206,7 +214,7 @@ exports.refreshToken = async (req, res, next) => {
 
 exports.forgotPassword = async (req, res, next) => {
     try {
-        const data = await validate(Validators.forgotPasswordValidation, req.body)
+        const data = await validate(Validators.user.forgotPasswordValidation, req.body)
 
         const user = await User.findOne({ email: data.email })
         if (user === null) throw new MyError(404, 'Email does not exist.')
@@ -214,7 +222,7 @@ exports.forgotPassword = async (req, res, next) => {
         const token = TokenHandler.forgotPasswordToken(user)
         console.log('Token ', token)
 
-        const link = `http://localhost:5000/api/v1/auth/reset-password/${user._id}/${token}`
+        const link = `${process.env.DOMAIN}/api/v1/auth/reset-password/${user._id}/${token}`
         console.log('Link ', link)
 
         // TODO: Send email to client (Transactional email)
@@ -230,7 +238,7 @@ exports.forgotPassword = async (req, res, next) => {
 
 exports.resetPassword = async (req, res, next) => {
     try {
-        const data = await validate(Validators.resetPasswordValidation, req.body)
+        const data = await validate(Validators.user.resetPasswordValidation, req.body)
 
         if (data.password !== data.confirmPassword) throw new MyError(400, 'Passwords do not match.')
 
@@ -239,6 +247,28 @@ exports.resetPassword = async (req, res, next) => {
         res.json({
             success: true,
             data: user
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.resendEmail = async (req, res, next) => {
+    try {
+        const bodyData = req.body
+
+        const data = await validate(Validators.auth.resendEmailValidation, bodyData)
+
+        const user = await User.findOne({ email: data.email })
+
+        if (!user) throw new MyError(404, 'User is not registered.')
+
+        const info = await verifyEmail('deepanshu@capitalnumbers.com', user.email, user.fullname, '#')
+
+        res.json({
+            success: true,
+            data: 'Mail has been resent.',
+            mail: info
         })
     } catch (error) {
         next(error)

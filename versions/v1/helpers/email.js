@@ -12,10 +12,9 @@ let transporter = nodemailer.createTransport({
 
 transporter.verify(function (error, success) {
     if (error) {
-        console.log(error);
+        console.log(error)
     } else {
-        console.log(success)
-        console.log("Server is ready to take our messages");
+        console.log("Email service is ready to serve emails.")
     }
 })
 

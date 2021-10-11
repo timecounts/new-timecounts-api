@@ -18,5 +18,6 @@ router.post('/logout', authController.logout)
 router.post('/refresh-token', authController.refreshToken)
 router.post('/forgot-password', authController.forgotPassword)
 router.post('/reset-password/:id/:token', forgotPasswordJwtVerify, authController.resetPassword)
+router.post('/resend-email', authController.resendEmail)
 
 module.exports = router
