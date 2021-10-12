@@ -1,7 +1,7 @@
 const transporter = require('../email')
 const verificationMail = require('./templates/verificationMail')
 
-const verifyEmail = async (sender, receiver, receiverName, verificationLink) => {
+const verificationEmail = async (sender, receiver, receiverName, verificationLink) => {
     return await transporter.sendMail({
         from: `"Timecounts" <${sender}>`, // sender address
         to: receiver, // list of receivers
@@ -11,4 +11,4 @@ const verifyEmail = async (sender, receiver, receiverName, verificationLink) => 
     })
 }
 
-module.exports = { verifyEmail }
+module.exports = { verificationEmail }

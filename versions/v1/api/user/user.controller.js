@@ -3,7 +3,8 @@ const validate = require("../../helpers/validation/validate")
 const Validators = require('../../helpers/validation')
 const bcrypt = require("bcrypt")
 const MyError = require("../../error/MyError")
-const { verifyEmail } = require('../../helpers/email/sendEmail')
+const { verificationEmail } = require('../../helpers/email/sendEmail')
+const TokenHandler = require('../../helpers/jsonwebtoken')
 
 exports.createUser = async (req, res, next) => {
     try {
@@ -19,9 +20,13 @@ exports.createUser = async (req, res, next) => {
         const password = data.password
         data.password = bcrypt.hashSync(password, 10)
 
-        await User.create(data)
+        const newUser = await User.create(data)
 
-        const info = await verifyEmail('deepanshu@capitalnumbers.com', data.email, data.fullName, '#')
+        const token = await TokenHandler.emailVerificationToken(newUser.email)
+        const verificationLink = `${process.env.BACKEND_DOMAIN}/api/v1/auth/verify-email/${token}`
+        console.log('Email verification link: ', verificationLink)
+
+        const info = await verificationEmail('deepanshu@capitalnumbers.com', data.email, data.fullName, '#')
 
         res.json({
             success: true,

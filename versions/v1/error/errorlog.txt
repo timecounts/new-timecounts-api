@@ -191,3 +191,11 @@ TypeError: Cannot read properties of undefined (reading 'validate')
     at Function.process_params (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/router/index.js:335:12)
     at next (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/router/index.js:275:10)
     at Function.handle (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/router/index.js:174:3)
+
+TypeError: verifyEmail is not a function
+    at exports.createUser (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/user/user.controller.js:24:28)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+ReferenceError: TokenHandler is not defined
+    at exports.createUser (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/user/user.controller.js:24:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

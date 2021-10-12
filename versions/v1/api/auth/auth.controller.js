@@ -5,7 +5,7 @@ const Validators = require('../../helpers/validation')
 const bcrypt = require("bcrypt")
 const MyError = require("../../error/MyError")
 const redis = require('../../helpers/redis')
-const { verifyEmail } = require('../../helpers/email/sendEmail')
+const { verificationEmail } = require('../../helpers/email/sendEmail')
 
 exports.login = async (req, res, next) => {
     try {
@@ -222,7 +222,7 @@ exports.forgotPassword = async (req, res, next) => {
         const token = TokenHandler.forgotPasswordToken(user)
         console.log('Token ', token)
 
-        const link = `${process.env.DOMAIN}/api/v1/auth/reset-password/${user._id}/${token}`
+        // const link = `${process.env.BACKEND_DOMAIN}/api/v1/auth/reset-password/${user._id}/${token}`
         console.log('Link ', link)
 
         // TODO: Send email to client (Transactional email)
@@ -263,13 +263,34 @@ exports.resendEmail = async (req, res, next) => {
 
         if (!user) throw new MyError(404, 'User is not registered.')
 
-        const info = await verifyEmail('deepanshu@capitalnumbers.com', user.email, user.fullname, '#')
+        const token = await TokenHandler.emailVerificationToken(user.email)
+        const verificationLink = `${process.env.BACKEND_DOMAIN}/api/v1/auth/verify-email/${token}`
+        console.log('Email verification link: ', verificationLink)
+
+        const info = await verificationEmail('deepanshu@capitalnumbers.com', user.email, user.fullname, verificationLink)
 
         res.json({
             success: true,
             data: 'Mail has been resent.',
             mail: info
         })
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.verifyEmail = async (req, res, next) => {
+    try {
+        const token = req.params.token
+        
+        const email = TokenHandler.validateEmailVerificationToken(token).email
+        
+        const user = User.findOne({ email: email })
+        if (!user) throw new MyError(404, 'User is not  registered.')
+
+        await User.findOneAndUpdate({ email: email }, { email_verified: true })
+
+        res.redirect(`${process.env.FRONTEND_DOMAIN}/email-confirmed/deepanshu@gmail.com`)
     } catch (error) {
         next(error)
     }

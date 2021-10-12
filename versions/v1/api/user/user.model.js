@@ -21,6 +21,10 @@ const userSchema = mongoose.Schema({
     },
     pictureUrl: {
         type: String
+    },
+    email_verified: {
+        type: Boolean,
+        default: false
     }
 })
 

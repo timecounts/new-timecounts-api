@@ -8,7 +8,7 @@ const JWT_SIGN_KEY = fs
     .readFileSync(path.resolve(__dirname, '../../../jwtSign.key'))
     .toString()
 const JWT_TOKEN_OPTIONS = {
-    issuer: 'http://localhost:5000',
+    issuer: process.env.BACKEND_DOMAIN,
     algorithm: "HS512",
     expiresIn: "1h",
 }
@@ -18,7 +18,7 @@ const REFRESH_SIGN_KEY = fs
     .readFileSync(path.resolve(__dirname, '../../../refreshSecret.key'))
     .toString()
 const REFRESH_TOKEN_OPTIONS = {
-    issuer: 'http://localhost:5000',
+    issuer: process.env.BACKEND_DOMAIN,
     algorithm: 'HS512',
     expiresIn: '1y'
 }
@@ -82,4 +82,22 @@ exports.validateForgotPasswordToken = (user, token) => {
     return jwt.verify(token, secret, {
         algorithms: ["HS512"]
     })
+}
+
+exports.emailVerificationToken = email => {
+    const payload = {
+        email: email
+    }
+
+    let options = JWT_TOKEN_OPTIONS
+    options['expiresIn'] = '24h'
+
+    return jwt.sign(payload, JWT_SIGN_KEY, options)
+}
+
+exports.validateEmailVerificationToken = token => {
+    let options = JWT_TOKEN_OPTIONS
+    options['expiresIn'] = '24h'
+
+    return jwt.verify(token, JWT_SIGN_KEY, options)
 }
