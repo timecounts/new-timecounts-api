@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 
 const userSchema = mongoose.Schema({
     provider: {
-        type: String
+        type: String,
+        enum: ['google', 'facebook']
     },
     providerId: {
         type: String
@@ -26,6 +27,8 @@ const userSchema = mongoose.Schema({
         type: Boolean,
         default: false
     }
+}, {
+    timestamps: true
 })
 
 module.exports = mongoose.model('User', userSchema)

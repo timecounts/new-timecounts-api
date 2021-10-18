@@ -199,3 +199,125 @@ TypeError: verifyEmail is not a function
 ReferenceError: TokenHandler is not defined
     at exports.createUser (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/user/user.controller.js:24:23)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Topology'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'topology' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:1123:12)
+    at ServerResponse.json (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:260:14)
+    at exports.organizationUrlExist (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/organization/organization.controller.js:32:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Topology'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'topology' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:1123:12)
+    at ServerResponse.json (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:260:14)
+    at exports.organizationUrlExist (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/organization/organization.controller.js:32:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Topology'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'topology' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:1123:12)
+    at ServerResponse.json (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:260:14)
+    at exports.organizationUrlExist (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/organization/organization.controller.js:32:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+ValidationError: Organization validation failed: category: Cast to string failed for value "[ 'nonprofit', 'own' ]" (type Array) at path "category", goals: Cast to string failed for value "[ 'CREATE_REPORTS', 'TRACK_VOLUNTEER_TIME' ]" (type Array) at path "goals"
+    at model.Document.invalidate (/home/deepanshu/Documents/Timecounts/server/node_modules/mongoose/lib/document.js:2879:32)
+    at model.$set (/home/deepanshu/Documents/Timecounts/server/node_modules/mongoose/lib/document.js:1426:12)
+    at model.$set (/home/deepanshu/Documents/Timecounts/server/node_modules/mongoose/lib/document.js:1128:16)
+    at model.Document (/home/deepanshu/Documents/Timecounts/server/node_modules/mongoose/lib/document.js:148:12)
+    at model.Model (/home/deepanshu/Documents/Timecounts/server/node_modules/mongoose/lib/model.js:106:12)
+    at new model (/home/deepanshu/Documents/Timecounts/server/node_modules/mongoose/lib/model.js:4751:15)
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/mongoose/lib/model.js:3109:22
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/mongoose/lib/model.js:3145:7
+    at Array.forEach (<anonymous>)
+    at /home/deepanshu/Documents/Timecounts/server/node_modules/mongoose/lib/model.js:3144:15
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Topology'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'topology' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:1123:12)
+    at ServerResponse.json (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:260:14)
+    at exports.organizationUrlExist (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/organization/organization.controller.js:35:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'NativeConnection'
+    |     property 'base' -> object with constructor 'Mongoose'
+    |     property 'connections' -> object with constructor 'Array'
+    --- index 0 closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:1123:12)
+    at ServerResponse.json (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:260:14)
+    at exports.organizationUrlExist (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/organization/organization.controller.js:35:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'NativeConnection'
+    |     property 'base' -> object with constructor 'Mongoose'
+    |     property 'connections' -> object with constructor 'Array'
+    --- index 0 closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:1123:12)
+    at ServerResponse.json (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:260:14)
+    at exports.organizationUrlExist (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/organization/organization.controller.js:35:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Topology'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'topology' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:1123:12)
+    at ServerResponse.json (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:260:14)
+    at exports.organizationUrlExist (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/organization/organization.controller.js:35:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Topology'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'topology' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:1123:12)
+    at ServerResponse.json (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:260:14)
+    at exports.organizationUrlExist (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/organization/organization.controller.js:35:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Topology'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'topology' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:1123:12)
+    at ServerResponse.json (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:260:14)
+    at exports.organizationUrlExist (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/organization/organization.controller.js:35:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Topology'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'topology' closes the circle
+    at JSON.stringify (<anonymous>)
+    at stringify (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:1123:12)
+    at ServerResponse.json (/home/deepanshu/Documents/Timecounts/server/node_modules/express/lib/response.js:260:14)
+    at exports.organizationUrlExist (/home/deepanshu/Documents/Timecounts/server/versions/v1/api/organization/organization.controller.js:35:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

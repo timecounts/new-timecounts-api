@@ -25,7 +25,11 @@ exports.login = async (req, res, next) => {
         res.json({
             success: true,
             accessToken: accessToken,
-            refreshToken: refreshToken
+            refreshToken: refreshToken,
+            userData: {
+                username: user.fullName,
+                email: user.email
+            }
         })
     } catch (error) {
         next(error)
@@ -74,7 +78,11 @@ exports.facebookLogin = async (req, res, next) => {
         res.json({
             success: true,
             accessToken: accessToken,
-            refreshToken: refreshToken
+            refreshToken: refreshToken,
+            userData: {
+                username: user.fullName,
+                email: user.email
+            }
         })
     } catch (error) {
         next(error)
@@ -94,7 +102,11 @@ exports.googleLogin = async (req, res, next) => {
         res.json({
             success: true,
             accessToken: accessToken,
-            refreshToken: refreshToken
+            refreshToken: refreshToken,
+            userData: {
+                username: user.fullName,
+                email: user.email
+            }
         })
     } catch (error) {
         next(error)
@@ -134,7 +146,11 @@ exports.facebookSignup = async (req, res, next) => {
             res.json({
                 success: true,
                 accessToken: accessToken,
-                refreshToken: refreshToken
+                refreshToken: refreshToken,
+                userData: {
+                    username: user.fullName,
+                    email: user.email
+                }
             })
         }
     } catch (error) {
@@ -175,7 +191,11 @@ exports.googleSignup = async (req, res, next) => {
             res.json({
                 success: true,
                 accessToken: accessToken,
-                refreshToken: refreshToken
+                refreshToken: refreshToken,
+                userData: {
+                    username: user.fullName,
+                    email: user.email
+                }
             })
         }
     } catch (error) {
@@ -290,7 +310,7 @@ exports.verifyEmail = async (req, res, next) => {
 
         await User.findOneAndUpdate({ email: email }, { email_verified: true })
 
-        res.redirect(`${process.env.FRONTEND_DOMAIN}/email-confirmed/deepanshu@gmail.com`)
+        res.redirect(`${process.env.FRONTEND_DOMAIN}/email-confirmed/${email}`)
     } catch (error) {
         next(error)
     }
