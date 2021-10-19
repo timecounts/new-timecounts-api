@@ -11,7 +11,7 @@ const organizationSchema = mongoose.Schema({
         require: true,
         unique:  true
     },
-    category: {
+    category: [{
         type: String,
         enum: [
             'nonprofit',
@@ -24,12 +24,12 @@ const organizationSchema = mongoose.Schema({
             'own',
             'church/spiritual group'
         ]
-    },
+    }],
     areas: [{
         type: String,
         lowercase: true
     }],
-    goals: {
+    goals: [{
         type: String,
         enum: [
             'CREATE_REPORTS',
@@ -41,7 +41,7 @@ const organizationSchema = mongoose.Schema({
             'PUBLISH_ONGOING_SCHEDULES',
             'CREATE_APPLICATIONS'
         ]
-    }
+    }]
 }, {
     timestamps: true
 })

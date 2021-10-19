@@ -9,7 +9,7 @@ exports.createOrganization = async (req, res, next) => {
 
         const data = await validate(Validators.organization.addOrganizationValidation, bodyData)
 
-        let organization = await Organization.findOne({ organizationName: data.organizationName })
+        const organization = await Organization.findOne({ organizationName: data.organizationName })
         if (organization) throw new MyError(400, 'Organization already exists.')
 
         await Organization.create(data)
