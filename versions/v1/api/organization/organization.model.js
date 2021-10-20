@@ -11,7 +11,11 @@ const organizationSchema = mongoose.Schema({
         require: true,
         unique:  true
     },
-    category: [{
+    approved: {
+        type: Boolean,
+        default: false
+    },
+    category: {
         type: String,
         enum: [
             'nonprofit',
@@ -24,7 +28,7 @@ const organizationSchema = mongoose.Schema({
             'own',
             'church/spiritual group'
         ]
-    }],
+    },
     areas: [{
         type: String,
         lowercase: true

@@ -1,4 +1,4 @@
-const verificationMail = (recieverName, verificationLink) => {
+const userVerificationMail = (recieverName, verificationLink) => {
     return {
         text: `
         Thanks for Signing up, ${recieverName}.
@@ -507,4 +507,4 @@ const verificationMail = (recieverName, verificationLink) => {
     }
 }
 
-module.exports = verificationMail
+module.exports = userVerificationMail

@@ -9,12 +9,9 @@ const addOrganizationValidation = yup.object({
         .url()
         .required('Must contain an unique Public URL.'),
     category: yup
-        .array(
-            yup
-                .string()
-                .lowercase()
-                .trim()
-        ),
+        .string()
+        .lowercase()
+        .trim(),
     areas: yup
         .array(
             yup

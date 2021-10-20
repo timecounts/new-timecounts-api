@@ -10,7 +10,7 @@ const JWT_SIGN_KEY = fs
 const JWT_TOKEN_OPTIONS = {
     issuer: process.env.BACKEND_DOMAIN,
     algorithm: "HS512",
-    expiresIn: "1h",
+    expiresIn: "60d", // 60days
 }
 
 // * Refresh Token keys
@@ -20,7 +20,7 @@ const REFRESH_SIGN_KEY = fs
 const REFRESH_TOKEN_OPTIONS = {
     issuer: process.env.BACKEND_DOMAIN,
     algorithm: 'HS512',
-    expiresIn: '1y'
+    expiresIn: '1y'   // 1year
 }
 
 exports.generateToken = payload => {
@@ -96,6 +96,24 @@ exports.emailVerificationToken = email => {
 }
 
 exports.validateEmailVerificationToken = token => {
+    let options = JWT_TOKEN_OPTIONS
+    options['expiresIn'] = '24h'
+
+    return jwt.verify(token, JWT_SIGN_KEY, options)
+}
+
+exports.organizationApprovalToken = id => {
+    const payload = {
+        id: id
+    }
+
+    let options = JWT_TOKEN_OPTIONS
+    options['expiresIn'] = '24h'
+
+    return jwt.sign(payload, JWT_SIGN_KEY, options)
+}
+
+exports.validateOrganizationApprovalToken = token => {
     let options = JWT_TOKEN_OPTIONS
     options['expiresIn'] = '24h'
 
