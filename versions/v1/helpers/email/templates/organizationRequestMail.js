@@ -1,11 +1,9 @@
-const organizationApprovalMail = (recieverName, verificationLink) => {
+const organizationRequestMail = (recieverName, organizationName) => {
     return {
         text: `
         Hi ${recieverName},
         
-        Please verify your organization to get access to thousands of exclusive features of Timecounts.
-        Click the link below to verify:
-        ${verificationLink}
+        Your request to create a new organization - ${organizationName} is pending approval. You should wait until the administrator approves your request.
 
         Thank you,
         Timecounts
@@ -17,15 +15,13 @@ const organizationApprovalMail = (recieverName, verificationLink) => {
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Organization Verification</title>
+            <title>Organization Creation</title>
         </head>
         <body>
-            <h1>Organization Approval</h1>
+            <h1>Almost there...</h1>
 
             <p>
-                Please verify your organization to get access to thousands of exclusive features of Timecounts.
-                Click the link below to verify:
-                ${verificationLink}
+            Your request to create a new organization - ${organizationName} is pending approval. You should wait until the administrator approves your request.
             </p>
 
             <p>
@@ -38,4 +34,4 @@ const organizationApprovalMail = (recieverName, verificationLink) => {
     }
 }
 
-module.exports = organizationApprovalMail
+module.exports = organizationRequestMail

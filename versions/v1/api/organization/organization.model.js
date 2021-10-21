@@ -1,6 +1,20 @@
 const mongoose = require('mongoose')
 
 const organizationSchema = mongoose.Schema({
+    owner: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
+        fullName: {
+            type: String,
+            require: true
+        },
+        email: {
+            type: String,
+            require: true
+        }
+    },
     organizationName: {
         type: String,
         require: true,

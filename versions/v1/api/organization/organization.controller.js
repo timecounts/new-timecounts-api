@@ -3,7 +3,7 @@ const Organization = require('./organization.model')
 const validate = require('../../helpers/validation/validate')
 const Validators = require('../../helpers/validation')
 const MyError = require('../../error/MyError')
-const { verificationOrganizationEmail } = require('../../helpers/email/sendEmail')
+const { requestOrganizationEmail } = require('../../helpers/email/sendEmail')
 const TokenHandler = require('../../helpers/jsonwebtoken')
 
 exports.createOrganization = async (req, res, next) => {
@@ -17,13 +17,14 @@ exports.createOrganization = async (req, res, next) => {
         const organization = await Organization.findOne({ organizationName: data.organizationName })
         if (organization) throw new MyError(400, 'Organization already exists.')
 
+        data.owner = {
+            id: user._id,
+            fullName: user.fullName,
+            email: user.email
+        }
         const newOrganization = await Organization.create(data)
 
-        const token = await TokenHandler.organizationApprovalToken(newOrganization._id)
-        const verificationLink = `${process.env.BACKEND_DOMAIN}/api/v1/organization/verify-organization/${token}`
-        console.log('Organization verification link: ', verificationLink)
-
-        const info = await verificationOrganizationEmail('deepanshu@capitalnumbers.com', user.email, user.fullName, '#')
+        await requestOrganizationEmail(user.email, user.fullName, newOrganization.organizationName)
 
         res.json({
             success: true,
@@ -47,24 +48,6 @@ exports.organizationUrlExist = async (req, res, next) => {
             success: true,
             data: 'Public Url is available to use.'
         })
-    } catch (error) {
-        next(error)
-    }
-}
-
-exports.verifyOrganization = async (req, res, next) => {
-    try {
-        const token = req.params.token
-        
-        const id = TokenHandler.validateOrganizationApprovalToken(token).id
-        
-        const organization = Organization.findById(id)
-        if (!organization) throw new MyError(404, 'Organization is not registered.')
-
-        await Organization.findByIdAndUpdate(id, { approved: true })
-
-        res.send('OK')
-        // res.redirect(`${process.env.FRONTEND_DOMAIN}/organization-approved/${organization.organizationName}`)
     } catch (error) {
         next(error)
     }

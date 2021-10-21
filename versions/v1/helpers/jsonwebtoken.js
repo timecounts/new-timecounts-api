@@ -101,21 +101,3 @@ exports.validateEmailVerificationToken = token => {
 
     return jwt.verify(token, JWT_SIGN_KEY, options)
 }
-
-exports.organizationApprovalToken = id => {
-    const payload = {
-        id: id
-    }
-
-    let options = JWT_TOKEN_OPTIONS
-    options['expiresIn'] = '24h'
-
-    return jwt.sign(payload, JWT_SIGN_KEY, options)
-}
-
-exports.validateOrganizationApprovalToken = token => {
-    let options = JWT_TOKEN_OPTIONS
-    options['expiresIn'] = '24h'
-
-    return jwt.verify(token, JWT_SIGN_KEY, options)
-}

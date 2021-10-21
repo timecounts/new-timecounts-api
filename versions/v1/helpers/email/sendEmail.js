@@ -1,6 +1,6 @@
 const transporter = require('../email')
 const userVerificationMail = require('./templates/verificationMail')
-const organizationApprovalMail = require('./templates/organizationApprovalMail')
+const organizationRequestMail = require('./templates/organizationRequestMail')
 
 const verificationEmail = async (sender, receiver, receiverName, verificationLink) => {
     return await transporter.sendMail({
@@ -12,17 +12,17 @@ const verificationEmail = async (sender, receiver, receiverName, verificationLin
     })
 }
 
-const verificationOrganizationEmail = async (sender, receiver, receiverName, verificationLink) => {
+const requestOrganizationEmail = async (receiver, receiverName, organizationName) => {
     return await transporter.sendMail({
-        from: `"Timecounts" <${sender}>`,
+        from: `"Timecounts" <amanda@timecounts.org, ankkit@timecounts.org>`,
         to: receiver,
         subject: 'Organization Approval',
-        text: organizationApprovalMail(receiverName, verificationLink).text,
-        html: organizationApprovalMail(receiverName, verificationLink).html,
+        text: organizationRequestMail(receiverName, organizationName).text,
+        html: organizationRequestMail(receiverName, organizationName).html,
     })
 }
 
 module.exports = { 
     verificationEmail ,
-    verificationOrganizationEmail
+    requestOrganizationEmail
 }
