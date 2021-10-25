@@ -5,6 +5,6 @@ const { jwtVerify } = require('../../helpers/middlewares/jwtVerify')
 
 router.get('/', jwtVerify, userController.showAllUser)
 router.post('/signup', userController.createUser)
-router.get('/dashboard', jwtVerify, userController.dashboard)
+router.patch('/', jwtVerify, userController.updateUser)
 
 module.exports = router

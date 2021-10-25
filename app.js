@@ -3,7 +3,6 @@ require('dotenv').config()
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
-const passport = require('passport')
 const compression = require('compression')
 
 const app = express()
@@ -22,7 +21,6 @@ app.use(compression({
         return compression.filter(req, res)
     }
 }))
-app.use(passport.initialize())
 
 app.get('/', (req, res) => {
     res.send('OK')

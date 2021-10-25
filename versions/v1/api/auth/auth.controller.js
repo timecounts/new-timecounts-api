@@ -28,7 +28,8 @@ exports.login = async (req, res, next) => {
             refreshToken: refreshToken,
             userData: {
                 username: user.fullName,
-                email: user.email
+                email: user.email,
+                pictureUrl: user.pictureUrl
             }
         })
     } catch (error) {
@@ -120,7 +121,8 @@ exports.facebookSignup = async (req, res, next) => {
             providerId: req.body._profile.id,
             fullName: req.body._profile.name,
             email: req.body._profile.email,
-            pictureUrl: req.body._profile.profilePicURL
+            pictureUrl: req.body._profile.profilePicURL,
+            email_verified: true
         }
 
         let user = await User.findOne({ email: newUser.email })
@@ -165,7 +167,8 @@ exports.googleSignup = async (req, res, next) => {
             providerId: req.body._profile.id,
             fullName: req.body._profile.name,
             email: req.body._profile.email,
-            pictureUrl: req.body._profile.profilePicURL
+            pictureUrl: req.body._profile.profilePicURL,
+            email_verified: true
         }
 
         let user = await User.findOne({ email: newUser.email })
@@ -292,7 +295,7 @@ exports.resendEmail = async (req, res, next) => {
         res.json({
             success: true,
             data: 'Mail has been resent.',
-            mail: info
+            verificationLink: verificationLink
         })
     } catch (error) {
         next(error)

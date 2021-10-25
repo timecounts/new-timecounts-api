@@ -26,6 +26,36 @@ const userSchema = mongoose.Schema({
     email_verified: {
         type: Boolean,
         default: false
+    },
+    firstName: {
+        type: String,
+    },
+    lastName: {
+        type: String,
+    },
+    phoneNumber: {
+        type: String,
+    },
+    dob: {
+        type: Date,
+    },
+    country: {
+        type: String,
+    },
+    address: {
+        type: String,
+    },
+    city: {
+        type: String,
+    },
+    province: {
+        type: String,
+    },
+    zip: {
+        type: Number,
+    },
+    profileImg: {
+        type: Buffer,
     }
 }, {
     timestamps: true

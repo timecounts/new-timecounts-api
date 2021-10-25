@@ -31,7 +31,21 @@ exports.createUser = async (req, res, next) => {
         res.json({
             success: true,
             data: "User created successfully.",
-            mail: 'Mail has been sent successfully.'
+            mail: 'Mail has been sent successfully.',
+            verificationLink: verificationLink
+        })
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.updateUser = async (req, res, next) => {
+    try {
+        const bodyData = req.body
+
+        res.json({
+            success: true,
+            data: bodyData
         })
     } catch (error) {
         next(error)
@@ -49,8 +63,4 @@ exports.showAllUser = async (req, res, next) => {
     } catch (error) {
         next(error)
     }
-}
-
-exports.dashboard = (req, res) => {
-    res.send('Dashboard')
 }

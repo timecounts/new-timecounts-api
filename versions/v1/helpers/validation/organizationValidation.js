@@ -11,21 +11,24 @@ const addOrganizationValidation = yup.object({
     category: yup
         .string()
         .lowercase()
-        .trim(),
+        .trim()
+        .required('Must contain a Category'),
     areas: yup
         .array(
             yup
                 .string()
                 .lowercase()
                 .trim()
-        ),
+        )
+        .required('Must contain Area'),
     goals: yup
         .array(
             yup
                 .string()
                 .uppercase()
                 .trim()
-        ),
+        )
+        .required('Must contain Goal'),
 })
 
 const organizationUrlExistValidation = yup.object({
