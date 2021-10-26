@@ -3,7 +3,7 @@ const { forgotPasswordJwtVerify } = require('../../helpers/middlewares/jwtVerify
 
 const authController = require('./auth.controller')
 
-// * Google Auth Routes
+// * Google Auth Routess
 router.post('/signup/google', authController.googleSignup)
 router.post('/google', authController.googleLogin)
 
