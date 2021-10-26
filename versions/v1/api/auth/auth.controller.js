@@ -82,7 +82,8 @@ exports.facebookLogin = async (req, res, next) => {
             refreshToken: refreshToken,
             userData: {
                 username: user.fullName,
-                email: user.email
+                email: user.email,
+                pictureUrl: user.pictureUrl
             }
         })
     } catch (error) {
@@ -106,7 +107,8 @@ exports.googleLogin = async (req, res, next) => {
             refreshToken: refreshToken,
             userData: {
                 username: user.fullName,
-                email: user.email
+                email: user.email,
+                pictureUrl: user.pictureUrl
             }
         })
     } catch (error) {

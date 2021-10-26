@@ -26,7 +26,7 @@ exports.createUser = async (req, res, next) => {
         const verificationLink = `${process.env.BACKEND_DOMAIN}/api/v1/auth/verify-email/${token}`
         console.log('Email verification link: ', verificationLink)
 
-        const info = await verificationEmail('deepanshu@capitalnumbers.com', data.email, data.fullName, '#')
+        await verificationEmail('deepanshu@capitalnumbers.com', data.email, data.fullName, '#')
 
         res.json({
             success: true,
@@ -43,9 +43,13 @@ exports.updateUser = async (req, res, next) => {
     try {
         const bodyData = req.body
 
+        const data = await validate(Validators.user.updateUserValidation, bodyData)
+
+        await User.findByIdAndUpdate(req.user, data)
+
         res.json({
             success: true,
-            data: bodyData
+            message: 'User data updated Successfully.'
         })
     } catch (error) {
         next(error)
